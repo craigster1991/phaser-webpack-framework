@@ -2,13 +2,13 @@
   "name": "PhaserES6Webpack",
   "version": "0.1.0",
   "description": "",
-  "author": "l",
+  "author": "craigster1991@gmail.com",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --progress --colors --watch --env.dev --display-optimization-bailout",
+    "dev": "webpack --progress --colors --watch --env.dev",
     "build": "webpack --progress --colors -p --env.production",
-    "lint": "eslint ./src/**/**.js",
-    "lint:fix": "eslint ./src/**/**.js --fix"
+    "lint": "eslint 'src/**/*.js'",
+    "lint:fix": "eslint 'src/**/*.js' --fix"
   },
   "license": "MIT",
   "devDependencies": {
@@ -24,18 +24,24 @@
     "eslint-config-airbnb": "^15.0.1",
     "eslint-config-airbnb-base": "^11.1.1",
     "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-import": "^2.2.0",
+    "eslint-import-resolver-webpack": "^0.8.3",
     "eslint-loader": "^1.7.1",
-    "eslint-plugin-jsx-a11y": "^6.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-node": "^4.2.2",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-react": "^7.1.0",
     "eslint-plugin-standard": "^3.0.1",
     "expose-loader": "^0.7.3",
+    "extract-text-webpack-plugin": "^2.1.2",
+    "file-loader": "^0.11.2",
+    "html-webpack-plugin": "^2.29.0",
+    "image-webpack-loader": "^3.3.1",
     "webpack": "^3.0.0"
   },
   "dependencies": {
     "phaser": "^2.6.2",
-    "webfontloader": "^1.6.28"
+    "webfontloader": "^1.6.28",
+    "webpack-dev-server": "^2.5.0"
   }
 }

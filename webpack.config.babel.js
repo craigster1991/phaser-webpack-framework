@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // Phaser webpack config
 const phaserModule = path.join(__dirname, '/node_modules/phaser/');
@@ -21,23 +21,16 @@ module.exports = env => ({
   output: {
     pathinfo: true,
     path: path.resolve(__dirname, 'build'),
-    publicPath: './build/',
+    publicPath: '',
     filename: 'app.js',
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({ name: 'bundle', filename: 'bundle.js' }),
-    new BrowserSyncPlugin({
-      host: 'localhost',
-      watch: true,
-      port: process.env.PORT || 3000,
-      server: {
-        baseDir: ['./', './build'],
-      },
+    (env.dev ? false : new webpack.optimize.ModuleConcatenationPlugin()),
+    new HtmlWebpackPlugin({
+      template: 'src/index.ejs',
     }),
-    new webpack.DefinePlugin({
-      __DEV__: env.dev,
-    }),
-  ],
+  ].filter(Boolean),
   module: {
     loaders: [
       { test: /pixi\.js/, use: ['expose-loader?PIXI'] },

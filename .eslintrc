@@ -1,0 +1,56 @@
+{
+  "extends": "airbnb",
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+  "plugins": ["import", "jsx-a11y"],
+  "settings": {
+    "import/core-modules": ["phaser", "p2", "pixi"]
+  },
+  "rules": {
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "prefer-const": ["error", {
+      "destructuring": "any",
+      "ignoreReadBeforeAssign": false
+    }],
+    "no-const-assign": ["error"],
+    "no-var": ["error"],
+    "object-shorthand": ["error", "always"],
+    "quote-props": ["error", "as-needed"],
+    "array-callback-return": ["error"],
+    "prefer-template": ["error"],
+    "no-useless-escape": ["error"],
+    "no-loop-func": ["error"],
+    "prefer-arrow-callback": ["warn"],
+    "arrow-spacing": ["error"],
+    "no-confusing-arrow": ["error"],
+    "arrow-parens": ["error", "as-needed"],
+    "template-curly-spacing": ["error", "never"],
+    "no-param-reassign": ["error", {"props": true}],
+    "camelcase": ["error", {"properties": "always"}],
+    "no-console": 0,
+    "max-len": 0,
+    "no-restricted-syntax": 0,
+    "consistent-return": 0,
+    "jsx-a11y/href-no-hash": 0
+  }
+}
